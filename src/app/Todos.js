@@ -12,7 +12,7 @@ const Todos = () => {
 
     const getTodos = async (page) => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/todos?page=${page}&limit=${todosPerPage}`);
+            const response = await axios.get(`https://flytent-serside.onrender.com/api/todos?page=${page}&limit=${todosPerPage}`);
             setTodos(response.data.todos);
             setTotalTodos(response.data.total); 
         } catch (error) {
@@ -32,7 +32,7 @@ const Todos = () => {
 
     const handleDeleteTodo = async (todoId) => {
         try {
-            await axios.delete(`http://localhost:8080/api/todos/${todoId}`);
+            await axios.delete(`https://flytent-serside.onrender.com/api/todos/${todoId}`);
             alert("Todo deleted successfully!");
             getTodos(currentPage); 
         } catch (error) {

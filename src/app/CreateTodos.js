@@ -18,7 +18,7 @@ const CreateTodos = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:8080/api/todos", { title, description });
+            await axios.post("https://flytent-serside.onrender.com/api/todos", { title, description });
             alert("Todo created successfully");
             setTitle("");
             setDescription("");
@@ -32,7 +32,7 @@ const CreateTodos = () => {
     const handleUpdate = async (e) => {
         e.preventDefault();
         try {
-            await axios.patch(`http://localhost:8080/api/todos/${selectedTodo._id}`, { title, description });
+            await axios.patch(`https://flytent-serside.onrender.com/api/todos/${selectedTodo._id}`, { title, description });
             handleUpdateTodo({ ...selectedTodo, title, description });
             alert("Todo updated successfully");
             handleRefreshTodos();
